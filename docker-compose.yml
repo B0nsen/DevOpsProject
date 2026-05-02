@@ -1,6 +1,7 @@
 services:
   db:
     image: mysql:8.0
+    restart: always
     environment:
       MYSQL_DATABASE: jysk_db
       MYSQL_ROOT_PASSWORD: root
@@ -13,12 +14,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db;Database=jysk_db;Uid=root;Pwd=root;
     depends_on:
       - db
 
   frontend:
     build:
-      context: ./Jysk/jysk.client # Перевірте правильність цього шляху
+      context: ./Jysk/jysk.client
     ports:
       - "3000:3000"
     depends_on:
