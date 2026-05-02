@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import plugin from '@vitejs/plugin-react';
 import fs from 'fs';
@@ -16,28 +15,23 @@ const certificateName = "jysk.client";
 const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
 const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
 
-if (!fs.existsSync(baseFolder)) {
-    fs.mkdirSync(baseFolder, { recursive: true });
-}
-
+// Логіка генерації сертифікатів працює тільки якщо ми НЕ в Docker (або якщо є dotnet)
 if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
-    if (0 !== child_process.spawnSync('dotnet', [
-        'dev-certs',
-        'https',
-        '--export-path',
-        certFilePath,
-        '--format',
-        'Pem',
-        '--no-password',
-    ], { stdio: 'inherit', }).status) {
-        throw new Error("Could not create certificate.");
+    try {
+        child_process.spawnSync('dotnet', [
+            'dev-certs', 'https', '--export-path', certFilePath, '--format', 'Pem', '--no-password',
+        ], { stdio: 'inherit' });
+    } catch (e) {
+        console.log("Skipping certificate creation (likely running in Docker).");
     }
 }
+
+// Перевіряємо, чи вдалося отримати сертифікати
+const useHttps = fs.existsSync(certFilePath) && fs.existsSync(keyFilePath);
 
 const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_HTTPS_PORT}` :
     env.ASPNETCORE_URLS ? env.ASPNETCORE_URLS.split(';')[0] : 'https://localhost:7196';
 
-// https://vitejs.dev/config/
 export default defineConfig({
     base: '/',
     plugins: [plugin()],
@@ -48,23 +42,16 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '^/weatherforecast': {
+            '^/api': { // Змініть на свій префікс API, якщо треба
                 target,
                 secure: false
             }
         },
         port: parseInt(env.DEV_SERVER_PORT || '51042'),
-        https: {
+        // Якщо сертифікати є — використовуємо HTTPS, якщо ні (Docker) — звичайний HTTP
+        https: useHttps ? {
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),
-        }
-    },
-    css: {
-        preprocessorOptions: {
-          scss: {
-            additionalData: ``,
-            quietDeps: true,
-          },
-        },
+        } : false
     }
 })
