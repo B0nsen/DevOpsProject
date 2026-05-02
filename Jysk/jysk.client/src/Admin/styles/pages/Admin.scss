@@ -1,0 +1,189 @@
+@import '../variables';
+
+.admin-main-content {
+    background-color: #F3F3F3;
+    height: 100vh;
+    font-family: $font-default;
+    font-size: 1.3em;
+
+    h1 {
+        margin: 97px;
+    }
+
+    .admin-header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .create {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        margin: 97px;
+        margin-left: 40%;
+        width: 140px;
+        height: 51px;
+        color: white;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        background-color: $color-tiffany-blue
+    }
+
+    table {
+        width: 80%;
+        margin: 97px;
+        border-collapse: collapse;
+        text-align: center;
+
+        .first {
+            padding-left: 0%;
+            text-align: left;
+        }
+
+        .redact {
+            margin-top: 15px;
+            font-size: 1em;
+            border: none;
+            background-color: #F3F3F3;
+            text-align: right;
+            margin-left: 20px
+        }
+
+        tr {
+            font-size: 1.2em;
+            border-bottom: 1px solid;
+        }
+
+        td {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        th {
+            padding-bottom: 20px;
+        }
+    }
+
+    .confirmation-window {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+
+        .confirmation-body {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px;
+            text-align: center;
+
+            div {
+
+
+                button {
+                    margin-top: 20px;
+                    margin-left: 40px;
+                    margin-right: 40px;
+                    border: none;
+                    background-color: $color-tiffany-blue;
+                    height: 40px;
+                    color: white;
+                    font-size: 1.2em;
+                    border-radius: 10px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+
+                    &:hover {
+                        background-color: #50AECD;
+                    }
+                }
+            }
+        }
+    }
+
+    .data-window {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+
+        .data-body {
+            gap: 10px 2em;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px;
+            text-align: center;
+            gap: 30px;
+
+            div {
+
+
+                button {
+                    margin-top: 20px;
+                    margin-left: 40px;
+                    margin-right: 40px;
+                    border: none;
+                    background-color: $color-tiffany-blue;
+                    height: 40px;
+                    color: white;
+                    font-size: 1.2em;
+                    border-radius: 10px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+
+                    &:hover {
+                        background-color: #50AECD;
+                    }
+                }
+            }
+
+
+
+
+            .admin-field {
+                clear: both;
+                text-align: right;
+                margin-top: 10px;
+
+                input {
+                    display: inline-block;
+                    margin-left: 20px;
+                    width: 350px;
+                    border-radius: 10px;
+                    background-color: #E0E0E0;
+                    border: 1px solid;
+                    border-color: grey;
+                    height: 30px;
+                    font-size: 1em;
+                    font-family: $font-default;
+                    padding-left: 10px;
+                }
+
+                select {
+                    display: inline-block;
+                    margin-left: 20px;
+                    width: 350px;
+                    border-radius: 10px;
+                    background-color: #E0E0E0;
+                    border: 1px solid;
+                    border-color: grey;
+                    height: 30px;
+                    font-size: 1em;
+                    font-family: $font-default;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+}

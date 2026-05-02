@@ -1,0 +1,76 @@
+@import '../variables';
+@import '../mixins';
+
+.site-footer {
+    background-color: $color-accent;
+    @include flex-center;
+    width: 100%;
+}
+
+.footer-container {
+    width: $max-width;
+    font-family: $font-default;
+    color: white;
+    padding: 15px 15px 0px 15px;
+
+    @media (max-width: $max-width) {
+        width: 100%;
+    }
+
+    div {
+        padding: 0;
+        padding-right: 15px;
+
+        h2{
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        * {
+            margin-bottom: 20px;
+        }
+    }
+
+    .payment-options {
+        display: flex;
+        justify-content: flex-start;
+        padding: unset;
+
+        img {
+            height: 35px;
+            margin-right: 15px;
+        }
+    }
+
+    .social {
+        padding-right: 0 !important;
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            height: 30px;
+            margin-left: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .payment-options {
+            justify-content: center;
+
+            img {
+                margin: 15px;
+            }
+        }
+
+        .social {
+            justify-content: center;
+
+            img {
+                margin: 15px;
+            }
+        }
+    }
+}

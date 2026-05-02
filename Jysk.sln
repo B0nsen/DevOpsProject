@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jysk.DAL", "Jysk.DAL\Jysk.DAL.csproj", "{3A73015E-41FE-4617-8114-2CCE83A7061C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jysk.BLL", "Jysk.BLL\Jysk.BLL.csproj", "{329FB168-0279-4F0D-96A0-C86B06D15E49}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "jysk.client", "Jysk\jysk.client\jysk.client.esproj", "{27A2CD2E-48DF-E6BD-5D70-4A8F15F148D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jysk.Server", "Jysk\Jysk.Server\Jysk.Server.csproj", "{93618168-C259-4E71-A000-00B4B23DB533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{C000A97B-2D46-7DE7-E934-66D7144D4963}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A73015E-41FE-4617-8114-2CCE83A7061C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A73015E-41FE-4617-8114-2CCE83A7061C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A73015E-41FE-4617-8114-2CCE83A7061C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A73015E-41FE-4617-8114-2CCE83A7061C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329FB168-0279-4F0D-96A0-C86B06D15E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329FB168-0279-4F0D-96A0-C86B06D15E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329FB168-0279-4F0D-96A0-C86B06D15E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329FB168-0279-4F0D-96A0-C86B06D15E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A2CD2E-48DF-E6BD-5D70-4A8F15F148D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A2CD2E-48DF-E6BD-5D70-4A8F15F148D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A2CD2E-48DF-E6BD-5D70-4A8F15F148D9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{27A2CD2E-48DF-E6BD-5D70-4A8F15F148D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A2CD2E-48DF-E6BD-5D70-4A8F15F148D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A2CD2E-48DF-E6BD-5D70-4A8F15F148D9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{93618168-C259-4E71-A000-00B4B23DB533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93618168-C259-4E71-A000-00B4B23DB533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93618168-C259-4E71-A000-00B4B23DB533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93618168-C259-4E71-A000-00B4B23DB533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C000A97B-2D46-7DE7-E934-66D7144D4963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C000A97B-2D46-7DE7-E934-66D7144D4963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C000A97B-2D46-7DE7-E934-66D7144D4963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C000A97B-2D46-7DE7-E934-66D7144D4963}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9841F39C-AC6A-4139-A988-C676AABE6C92}
+	EndGlobalSection
+EndGlobal

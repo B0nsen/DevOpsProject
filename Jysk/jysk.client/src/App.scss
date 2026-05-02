@@ -1,0 +1,28 @@
+@use "bootstrap/scss/bootstrap-grid";
+@import './styles/variables';
+@import './styles/mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-default;
+}
+html {
+    background-color: $color-background;
+    font-size: 0.9em;
+}
+main {
+    width: 100%;
+    flex: 1;
+}
+@media (max-width: $breakpoint-tablet) {
+    html {
+      font-size: 90%; 
+    }
+}
+@media (max-width: $breakpoint-mobile-xs) {
+    html {
+        font-size: 75%;
+    }
+}

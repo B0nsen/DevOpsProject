@@ -1,0 +1,63 @@
+@import '../variables';
+@import '../mixins';
+@import '../utilities';
+
+.filter-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .filter-list__button{
+        background-color: $color-secondary-light;
+        padding: 10px 15px;
+        font-size: 15px;
+        border-radius: 5px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+
+        img {
+            height: 10px;
+        }
+    }
+
+    @media (max-width: $breakpoint-lg) {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .hide-on-mobile {
+            display: none;
+        }
+        .filter-list__button{
+            @media (max-width: $breakpoint-lg) {
+                width: 100%;
+            }
+        }
+        .flex-row {
+            align-items: center;
+            justify-content: flex-end;
+            width: 450px;
+
+            @media (max-width: $breakpoint-mobile){
+                width: 100%;
+            }
+        }
+    }
+}
+
+.react-switch {
+    .react-switch-bg{
+        border: 1px solid #0000002a;
+    }
+    .react-switch-handle {
+        outline:none!important;
+        box-shadow: none!important;
+    }
+}

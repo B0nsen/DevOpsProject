@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+$font-default: 'Raleway', sans-serif;
+
+$color-accent: #00AAAD;
+$color-secondary: #D9D9D9;
+$color-secondary-light: #E0E0E0;
+$color-background: #F3F3F3;
+$color-surface: #ffffff;
+
+$color-accent-green: #20873e;
+$color-accent-red: #cf0013;
+$color-accent-yellow: #ffe44c;
+
+$color-border: #d4d4d4;
+
+$color-text-muted: #231F20BF; 
+$color-text-transparent: #00000080; 
+$color-text-light: #ffffff;
+
+$shadow-light: 0 3px 5px rgba(0, 0, 0, 0.1);
+$overlay-light: rgba(0, 0, 0, 0.1);
+
+$max-width: 1170px;
+$breakpoint-lg: 992px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+$breakpoint-mobile-xs: 320px;
+
+:root {
+    --in-stock-green: #20873e;
+    --in-stock-red: #cf0013;
+    --in-stock-yellow: #ffe44c;
+}

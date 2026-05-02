@@ -1,0 +1,127 @@
+@import '../variables';
+@import '../mixins';
+
+.product-card {
+    background-color: $color-surface;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadow-light;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    
+    .img-container {
+        aspect-ratio: 2 / 2.5; 
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .overlay-container{
+            position: absolute;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+        }
+
+        .wishlist-icon-container{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            padding: 10px;
+            .wishlist-icon {
+                width: 25px;
+                object-fit: contain; 
+            }
+        }
+
+        .product-img {
+            @include responsive-image;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: 1;
+
+            transition: transform 0.4s ease;
+        }
+    
+        &:hover .product-img {
+            transform: scale(1.1);
+        }
+    }
+    .desc-container{
+        padding: 10px;
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .rating{
+            display: flex;
+            gap:3px;
+            img{
+                height: 15px;
+            }
+        }
+        .price{
+            font-size: 1.5em;
+            font-weight: bold;
+
+            span{ font-size: 0.6em; }
+        }
+        .old-price{
+            font-size: 1.2em;
+            text-decoration: line-through;
+            color: $color-text-transparent;
+            font-weight: 600;
+                span{ font-size: 0.7em; }
+        }
+        .product-name{
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    }
+}
+
+.in-stock{
+    display: flex;
+    font-size: 0.9em;
+    align-items: center;
+    gap: 5px;
+
+    .in-stock-icon{
+        border-radius: 100px;
+        width: 9px;
+        height: 9px;
+    }
+}
+
+.stickers {
+    display: inline-flex; 
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start; 
+
+    .sticker {
+        font-size: 1em;
+        font-weight: 700;
+        padding: 8px;
+        border-radius: 3px;
+        color: $color-text-light;
+
+        &.red {
+            background-color: $color-accent-red;
+        }
+    
+        &.green {
+            background-color: $color-accent-green;
+        }
+    
+        &.teal {
+            background-color: $color-accent;
+        }
+    }
+}

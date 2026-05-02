@@ -1,0 +1,31 @@
+@import '../variables';
+
+.border-bottom {
+    border-bottom: 1px solid $color-border;
+}
+.no-border {
+    border-bottom: none !important;
+}
+.bg-white {
+  background-color: $color-surface;
+  border-bottom: none !important;
+  box-shadow: $shadow-light;
+}
+.body-section {
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    &.bg-white {
+        background-color: $color-surface; 
+    }
+
+    .section-container {
+        width: $max-width;
+        padding: 15px;
+
+        @media (max-width: $max-width) {
+            width: 100%;
+        }
+    }
+}

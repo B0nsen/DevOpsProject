@@ -1,0 +1,112 @@
+@import '../variables';
+@import '../mixins';
+
+
+body {
+    margin: 0;
+    font-family: $font-default;
+    
+}
+
+.sidebar {
+    width: 415px;
+    height: 100vh;
+    background-color: $color-tiffany-blue;
+    font-size: 1em;
+    color: white;
+    padding-left: 135px;
+    padding-top: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    .leave {
+        font-size: 1.5em;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding-left: 135px;
+        padding-bottom: 50px;
+    }
+
+    button {
+        margin-bottom: 20px;
+        text-decoration: none;
+    }
+
+    ul {
+        margin-top: 50px;
+        list-style-type: none;
+        padding: 0px;
+        font-size: 1.5em;
+
+        li {
+            margin-bottom: 40px;
+
+            button {
+                margin: 0px;
+                padding: 0px;
+                color: white;
+                text-decoration: none;
+                border: none;
+                background-color: $color-tiffany-blue;
+                font-size: 1em;
+            }
+        }
+    }
+
+    div {
+        align-items: center;
+        width: 250px;
+        color: black;
+        display: flex;
+        flex-direction: row;
+        height: 80px;
+        background-color: white;
+
+        p {
+            margin: 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 1.2em;
+        }
+
+        img {
+            margin-left: 20px;
+        }
+    }
+
+    .site-logo {
+        height: 50px;
+    }
+
+    .clickable {
+        margin: 0px;
+        padding: 0px;
+        cursor: pointer;
+    }
+
+    .nested {
+        font-family: $font-default;
+        overflow: hidden;
+        max-height: 0px;
+        transition: max-height 0.3s ease-in-out;
+        margin-left: 40px;
+        font-size: 0.65em;
+
+        li {
+            margin-top: 50px;
+        }
+
+        ul {
+            margin: 0px;
+            padding-top: 0px;
+            list-style: none;
+        }
+
+        &.open {
+            max-height: 390px;
+        }
+    }
+}
+

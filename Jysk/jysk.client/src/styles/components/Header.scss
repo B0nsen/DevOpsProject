@@ -1,0 +1,201 @@
+@import '../variables';
+@import '../mixins';
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    background-color: $color-surface;
+
+    .decorative-strip {
+        background-color: $color-accent;
+        height: 36px;
+        width: 100%;
+    }
+
+    .header-container {
+        width: $max-width;
+
+        .header-wrapper {
+            background-color: $color-surface;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 95px;
+            padding: 0 15px;
+            
+            .header-item {
+                display: flex;
+                flex-direction: row;
+
+                .site-logo {
+                    height: 50px;
+                }
+
+                .icon {
+                    height: 22px;
+                }
+
+                .icon-menu {
+                    height: 24px;
+                    width: 25px;
+                    margin-right: 10px;
+                }
+
+                .section {
+                    @include flex-center;
+
+                    p {
+                        @media (max-width: $breakpoint-tablet) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .left .section {
+                font-size: 1.1em;
+                margin-right: 15px;
+            }
+
+            .right {
+                .section {
+                    margin-left: 25px;
+                }
+            }
+
+            .search-bar-container {
+                @include flex-center;
+
+                .search-bar-wrapper {
+                    width: 535px;
+                    height: 42px;
+                    background-color: $color-secondary-light;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    display: flex;
+
+                    .icon-container {
+                        @include flex-center;
+                        height: 100%;
+                        padding-right: 10px;
+
+                        .icon {
+                            height: 20px;
+                        }
+                    }
+                    .search-bar {
+                        @include input-style(100%, $color-secondary-light);
+                    }
+
+                    @media (max-width: $max-width) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-bottom-container {
+        width: 100%;
+        @include flex-center;
+
+        border-top: 1px solid $color-border;
+
+        @media (max-width: $breakpoint-mobile) {
+            display: none;
+            border: none;
+        }
+
+        .section-container {
+            width: $max-width;
+            padding: 0 15px;
+
+            .header-bottom {
+                background-color: $color-surface;
+                height: 61px;
+                display: flex;
+                justify-content: space-between;
+
+                .section {
+                    height: 100%;
+                    align-items: center;
+                }
+
+                .right {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    @media (max-width: $breakpoint-tablet) {
+                        gap: 10px;
+                        width: 100%;
+                    }
+
+                    .element {
+                        background-color: $color-secondary-light;
+                        height: 40px;
+                        @include flex-center;
+
+                        padding: 0 15px;
+                        margin-left: 10px;
+                        border-radius: 5px;
+
+                        @media (max-width: 770px) {
+                            margin: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .left {
+                    display: flex;
+                    align-items: center;
+
+                    @media (max-width: $breakpoint-tablet) {
+                        display: none;
+                    }
+
+                    .icon-marker {
+                        height: 20px;
+                    }
+
+                    .icon-arrow-down {
+                        height: 8px;
+                    }
+
+                    * {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $max-width) {
+        .header-container {
+            width: 100%;
+
+            .header-wrapper {
+                height: 150px;
+
+                .search-bar-container {
+                    order: 1;
+                    width: 100%;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
+}
